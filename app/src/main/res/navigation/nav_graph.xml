@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/home2">
+
+    <fragment
+        android:id="@+id/home2"
+        android:name="com.raian.navigationcomponentsession.Home"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_home2_to_profile"
+            app:destination="@id/profile" />
+        <action
+            android:id="@+id/action_home2_to_about"
+            app:destination="@id/about" />
+    </fragment>
+    <fragment
+        android:id="@+id/about"
+        android:name="com.raian.navigationcomponentsession.About"
+        android:label="About"
+        tools:layout="@layout/fragment_about" >
+        <argument
+            android:name="name"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_about_to_profile"
+            app:destination="@id/profile" />
+        <action
+            android:id="@+id/action_about_to_home2"
+            app:destination="@id/home2" />
+    </fragment>
+    <fragment
+        android:id="@+id/profile"
+        android:name="com.raian.navigationcomponentsession.Profile"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_profile_to_about"
+            app:destination="@id/about" />
+        <argument
+            android:name="number"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_profile_to_home2"
+            app:destination="@id/home2" />
+    </fragment>
+</navigation>
